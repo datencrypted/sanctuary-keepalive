@@ -1,0 +1,12 @@
+﻿name: keep-awake
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wake the sanctuary
+        run: curl -fsS --max-time 30 https://the-sanctuary-jfze.onrender.com/api/ping
